@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pretty Rich Lashes | Book Lash Extensions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header-bar">
+    <nav>
+      <a href="#">Pretty Rich Lashes</a>
+      <div class="nav-desktop">
+        <button type="button" class="btn-primary" onclick="scrollToBook()">Book</button>
+      </div>
+      <button type="button" class="nav-mobile-btn" id="navToggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav-dropdown" id="navDropdown">
+      <button type="button" class="btn-primary" onclick="scrollToBook(); closeNav();">Book appointment</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero reveal visible">
+      <div class="container-narrow">
+        <div class="logo-wrap">
+          <img src="assets/logo.png" alt="Pretty Rich Lashes" width="240" height="240" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="logo-fallback" style="display:none; width:12rem; height:12rem; border-radius:50%; background:rgba(255,255,255,0.6); font-family: 'Cormorant Garamond', serif; font-size:1.5rem; font-weight:300; color:var(--stone-600); padding:1rem;">Pretty Rich Lashes</div>
+        </div>
+        <h1 class="font-serif">Luxury Lash Extensions</h1>
+        <p class="tagline">Enhance your natural beauty</p>
+        <div class="cta-row">
+          <button type="button" class="btn-primary" onclick="scrollToBook()">Book</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-services reveal">
+      <div class="container-list">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">Luxury lash artistry in Strovolos, Nicosia. Choose your service when booking below.</p>
+        <div class="price-groups">
+          <div class="price-group">
+            <h3 class="font-serif">For lash extensions</h3>
+            <ul>
+              <li><span>Classic & Hybrid</span></li>
+              <li><span>2-3D Volume</span></li>
+              <li><span>4D Volume</span></li>
+              <li><span>5D Volume</span></li>
+              <li><span>Mega Volume</span></li>
+            </ul>
+          </div>
+          <div class="price-group">
+            <h3 class="font-serif">Refill / correction</h3>
+            <ul>
+              <li><span>Classic & Hybrid</span></li>
+              <li><span>2-3D Volume</span></li>
+              <li><span>4D Volume</span></li>
+              <li><span>5D Volume</span></li>
+              <li><span>Mega Volume</span></li>
+            </ul>
+          </div>
+          <div class="price-group">
+            <h3 class="font-serif">Additional effects</h3>
+            <ul>
+              <li><span>Wet Effect, Colourful</span></li>
+              <li><span>Bottom Lashes</span></li>
+              <li><span>Removal of eyelashes</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-book reveal" id="book">
+      <div class="container-form">
+        <h2 class="section-title">Book</h2>
+        <p class="section-subtitle">Service, date, time & your details.</p>
+
+        <div id="successBlock" class="card success-card" style="display:none;">
+          <div class="success-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="font-serif">Booking confirmed</h3>
+          <p class="confirm-msg" id="confirmMsg"></p>
+          <button type="button" class="btn-secondary" onclick="resetForm()">Book another</button>
+        </div>
+
+        <div id="formBlock" class="card">
+          <form id="bookingForm" onsubmit="return handleSubmit(event);">
+            <div class="form-group">
+              <label>Service</label>
+              <div class="service-grid" id="serviceGrid"></div>
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" class="input-field" required />
+            </div>
+            <div class="form-group">
+              <label>Time</label>
+              <div class="time-slots" id="timeSlots"></div>
+            </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="input-field" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" class="input-field" placeholder="+357 99 123 456" required />
+            </div>
+            <p id="formError" class="form-error" style="display:none;"></p>
+            <button type="submit" class="form-submit" id="submitBtn">Confirm booking</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-bar">
+    <div class="inner">
+      <div class="links">
+        <p class="brand">Pretty Rich Lashes</p>
+        <button type="button" class="book-link" onclick="scrollToBook()">Book</button>
+      </div>
+      <p class="copy">© <span id="year"></span> Pretty Rich Lashes</p>
+      <p class="built-by">Built by <a href="https://chrysos.dev" target="_blank" rel="noopener noreferrer">Chrysos.dev</a></p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

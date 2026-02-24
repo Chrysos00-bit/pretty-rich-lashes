@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pretty Rich Lashes | Book Lash Extensions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --nude-50: #fdf8f6;
+      --nude-100: #f9f0eb;
+      --nude-200: #f2e2d9;
+      --nude-300: #e8cfc2;
+      --nude-400: #d4b5a2;
+      --rose-50: #fff1f2;
+      --rose-100: #ffe4e6;
+      --rose-300: #fda4af;
+      --rose-400: #fb7187;
+      --rose-500: #f43f5e;
+      --stone-500: #78716c;
+      --stone-600: #57534e;
+      --stone-700: #44403c;
+      --stone-800: #292524;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Outfit', system-ui, sans-serif;
+      background-color: var(--nude-50);
+      color: var(--stone-800);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    /* Header */
+    .header-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(253, 248, 246, 0.98);
+      border-bottom: 1px solid rgba(242, 226, 217, 0.6);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-bar nav {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-bar a {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      letter-spacing: 0.025em;
+      color: var(--stone-800);
+      text-decoration: none;
+    }
+
+    .header-bar a:hover { color: var(--stone-700); }
+
+    @media (min-width: 768px) {
+      .header-bar nav { padding: 1.25rem 2rem; }
+      .header-bar a { font-size: 1.5rem; }
+      .header-bar .nav-desktop { display: block; }
+      .header-bar .nav-mobile-btn { display: none; }
+    }
+
+    .header-bar .nav-desktop { display: none; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: white;
+      background: var(--rose-400);
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px -2px rgba(251, 113, 135, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--rose-500);
+      box-shadow: 0 4px 16px -2px rgba(251, 113, 135, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .nav-mobile-btn {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-mobile-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--stone-600);
+      border-radius: 9999px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .nav-mobile-btn.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(6px);
+    }
+
+    .nav-mobile-btn.open span:nth-child(2) { opacity: 0; }
+
+    .nav-mobile-btn.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-6px);
+    }
+
+    .nav-dropdown {
+      display: none;
+      border-top: 1px solid rgba(242, 226, 217, 0.8);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .nav-dropdown.open { display: block; }
+
+    .nav-dropdown .btn-primary { width: 100%; }
+
+    /* Main */
+    main { flex: 1; }
+
+    .container-narrow {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .container-list {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .container-form {
+      max-width: 32rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(180deg, #ffe4e6 0%, #fdecec 50%, #fff1f2 100%);
+      padding: 4rem 1.5rem 5rem;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .hero { padding: 6rem 2rem 7rem; }
+    }
+
+    .hero .logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .hero .logo-wrap img {
+      width: 12rem;
+      height: auto;
+      border-radius: 50%;
+      object-fit: contain;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    }
+
+    .hero .logo-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 300;
+      letter-spacing: 0.025em;
+      color: var(--stone-800);
+      margin: 0 0 1rem;
+    }
+
+    @media (min-width: 768px) { .hero h1 { font-size: 3rem; } }
+
+    .hero .tagline {
+      font-size: 1.125rem;
+      color: var(--stone-600);
+      letter-spacing: 0.025em;
+      margin: 0 0 3rem;
+    }
+
+    @media (min-width: 768px) { .hero .tagline { font-size: 1.25rem; } }
+
+    .hero .cta-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero .cta-row { flex-direction: row; justify-content: center; }
+    }
+
+    .hero .cta-row .btn-primary { width: 100%; }
+    @media (min-width: 640px) { .hero .cta-row .btn-primary { width: auto; } }
+
+    .hero .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.875rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--stone-700);
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 2px 15px -3px rgba(0,0,0,0.07);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    @media (min-width: 640px) { .hero .btn-wa { width: auto; } }
+
+    .hero .btn-wa:hover {
+      background: white;
+      box-shadow: 0 4px 24px -2px rgba(0,0,0,0.06);
+    }
+
+    /* Price list section */
+    .section-price {
+      background: #fdf8f6;
+      padding: 5rem 1.5rem;
+    }
+
+    @media (min-width: 768px) { .section-price { padding: 7rem 1.5rem; } }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.875rem;
+      font-weight: 300;
+      letter-spacing: 0.025em;
+      color: var(--stone-800);
+      margin: 0 0 0.75rem;
+    }
+
+    @media (min-width: 768px) { .section-title { font-size: 2.25rem; } }
+
+    .section-subtitle {
+      color: var(--stone-500);
+      font-size: 0.875rem;
+      margin: 0 0 3rem;
+      text-align: center;
+    }
+
+    .price-groups { margin-top: 3rem; }
+
+    .price-group {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 15px -3px rgba(0,0,0,0.07), 0 10px 20px -2px rgba(0,0,0,0.04);
+    }
+
+    @media (min-width: 768px) { .price-group { padding: 2rem; } }
+
+    .price-group h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.125rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--stone-700);
+      margin: 0 0 1rem;
+    }
+
+    .price-group ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .price-group li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--nude-100);
+    }
+
+    .price-group li:last-child { border-bottom: 0; }
+
+    .price-group .price { font-weight: 500; color: var(--rose-400); }
+
+    .section-price .book-now-wrap { margin-top: 3.5rem; text-align: center; }
+
+    /* About section */
+    .section-about {
+      background: #fdf8f6;
+      padding: 5rem 1.5rem;
+    }
+    .section-about .container-about { max-width: 42rem; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+    .section-about .about-subtitle { color: var(--stone-500); font-size: 0.875rem; margin: 1rem 0; }
+    .section-about .about-text { color: var(--stone-600); line-height: 1.7; margin: 1rem 0; }
+
+    /* Book section */
+    .section-book {
+      background: linear-gradient(180deg, #fdf8f6 0%, #f9f0eb 100%);
+      padding: 5rem 1.5rem 8rem;
+    }
+
+    @media (min-width: 768px) { .section-book { padding: 7rem 1.5rem 10rem; } }
+
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+      text-align: left;
+      box-shadow: 0 4px 24px -2px rgba(0,0,0,0.06), 0 12px 32px -4px rgba(0,0,0,0.05);
+    }
+
+    @media (min-width: 768px) { .card { padding: 2rem; } }
+
+    .card.success-card { text-align: center; }
+
+    .success-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: 0 auto 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--rose-100);
+      color: var(--rose-400);
+      border-radius: 50%;
+    }
+
+    .success-icon svg { width: 1.75rem; height: 1.75rem; }
+
+    .card h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--stone-800);
+      margin: 0 0 1rem;
+    }
+
+    .card .confirm-msg {
+      color: var(--stone-600);
+      margin: 0 0 0.5rem;
+    }
+
+    .card .confirm-email {
+      font-size: 0.875rem;
+      color: var(--stone-500);
+      margin: 0 0 1.5rem;
+    }
+
+    .card .confirm-wa {
+      font-size: 0.875rem;
+      color: var(--stone-600);
+      margin: 0 0 1.5rem;
+    }
+
+    .card .confirm-wa a {
+      color: var(--rose-400);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .card .confirm-wa a:hover { color: var(--rose-500); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--stone-700);
+      background: white;
+      border: 1px solid var(--nude-300);
+      border-radius: 9999px;
+      cursor: pointer;
+      margin-top: 2rem;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--nude-50);
+      transform: translateY(-1px);
+    }
+
+    /* Form */
+    .form-group { margin-bottom: 2rem; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--stone-700);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-grid {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) { .service-grid { grid-template-columns: 1fr 1fr; } }
+
+    .service-btn {
+      padding: 1rem;
+      text-align: left;
+      border-radius: 1rem;
+      border: 1px solid var(--nude-200);
+      background: white;
+      color: var(--stone-600);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+
+    .service-btn:hover {
+      border-color: var(--nude-300);
+      background: rgba(249, 240, 235, 0.5);
+    }
+
+    .service-btn.selected {
+      border-color: var(--rose-300);
+      background: rgba(255, 241, 242, 0.7);
+      color: var(--stone-800);
+      box-shadow: 0 2px 15px -3px rgba(0,0,0,0.07);
+    }
+
+    .service-btn .price { color: var(--rose-400); margin-left: 0.25rem; }
+
+    .input-field {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      color: var(--stone-800);
+      background: white;
+      border: 1px solid var(--nude-200);
+      border-radius: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: var(--rose-300);
+      box-shadow: 0 0 0 2px var(--rose-50);
+    }
+
+    .input-field::placeholder { color: #a8a29e; }
+
+    .time-slots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .time-sunday-msg {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--stone-600);
+      line-height: 1.5;
+    }
+
+    .time-btn {
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--nude-200);
+      background: white;
+      color: var(--stone-600);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .time-btn:hover {
+      border-color: var(--nude-300);
+      background: rgba(249, 240, 235, 0.5);
+    }
+
+    .time-btn.selected {
+      border-color: var(--rose-300);
+      background: rgba(255, 241, 242, 0.7);
+      color: var(--stone-800);
+    }
+
+    .time-btn:disabled,
+    .time-btn.booked {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background: var(--nude-100);
+      border-color: var(--nude-200);
+      color: var(--stone-500);
+      box-shadow: none;
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.875rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: white;
+      background: var(--rose-400);
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px -2px rgba(251, 113, 135, 0.4);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .form-submit:hover:not(:disabled) {
+      background: var(--rose-500);
+      transform: translateY(-1px);
+    }
+
+    .form-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .form-error {
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: #b91c1c;
+      background: #fef2f2;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-loading { color: var(--stone-500); font-size: 0.875rem; margin-top: 0.75rem; }
+
+    /* Footer */
+    .footer-bar {
+      background: rgba(249, 240, 235, 0.5);
+      border-top: 1px solid var(--nude-200);
+    }
+
+    .footer-bar .inner {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+
+    @media (min-width: 768px) { .footer-bar .inner { padding: 4rem 2rem; } }
+
+    .footer-bar .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) { .footer-bar .links { flex-direction: row; } }
+
+    .footer-bar .brand {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.125rem;
+      font-weight: 300;
+      color: var(--stone-600);
+      margin: 0;
+    }
+
+    .footer-bar .book-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--rose-400);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .footer-bar .book-link:hover { color: var(--rose-500); }
+
+    .footer-bar .wa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--stone-700);
+      background: white;
+      border: 1px solid var(--nude-300);
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 2px 15px -3px rgba(0,0,0,0.07);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .footer-bar .wa-link:hover {
+      border-color: #d4b5a2;
+      box-shadow: 0 4px 24px -2px rgba(0,0,0,0.06);
+    }
+
+    .footer-bar .admin-link {
+      font-size: 0.75rem;
+      color: #a8a29e;
+      text-decoration: none;
+    }
+
+    .footer-bar .admin-link:hover { color: var(--stone-500); }
+
+    .footer-bar .copy {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #a8a29e;
+    }
+
+    .footer-bar .built-by {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 10px;
+      color: #a8a29e;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .footer-bar .built-by a {
+      color: #a8a29e;
+      text-decoration: none;
+    }
+    .footer-bar .built-by a:hover {
+      color: var(--stone-500);
+    }
+  </style>
+</head>
+<body>
+  <header class="header-bar">
+    <nav>
+      <a href="#">Pretty Rich Lashes</a>
+      <div class="nav-desktop">
+        <button type="button" class="btn-primary" onclick="scrollToBook()">Book</button>
+      </div>
+      <button type="button" class="nav-mobile-btn" id="navToggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav-dropdown" id="navDropdown">
+      <button type="button" class="btn-primary" onclick="scrollToBook(); closeNav();">Book appointment</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container-narrow">
+        <div class="logo-wrap">
+          <img src="assets/logo.png" alt="Pretty Rich Lashes" width="240" height="240" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="logo-fallback" style="display:none; width:12rem; height:12rem; border-radius:50%; background:rgba(255,255,255,0.6); font-family: 'Cormorant Garamond', serif; font-size:1.5rem; font-weight:300; color:var(--stone-600); padding:1rem;">Pretty Rich Lashes</div>
+        </div>
+        <h1 class="font-serif">Luxury Lash Extensions</h1>
+        <p class="tagline">Enhance your natural beauty</p>
+        <div class="cta-row">
+          <button type="button" class="btn-primary" onclick="scrollToBook()">Book</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-price">
+      <div class="container-list">
+        <h2 class="section-title">Price list</h2>
+        <p class="section-subtitle">Choose your service below when booking.</p>
+        <div class="price-groups">
+          <div class="price-group">
+            <h3 class="font-serif">For lash extensions</h3>
+            <ul>
+              <li><span>Classic & Hybrid</span></li>
+              <li><span>2-3D Volume</span></li>
+              <li><span>4D Volume</span></li>
+              <li><span>5D Volume</span></li>
+              <li><span>Mega Volume</span></li>
+            </ul>
+          </div>
+          <div class="price-group">
+            <h3 class="font-serif">Refill / correction</h3>
+            <ul>
+              <li><span>Classic & Hybrid</span></li>
+              <li><span>2-3D Volume</span></li>
+              <li><span>4D Volume</span></li>
+              <li><span>5D Volume</span></li>
+              <li><span>Mega Volume</span></li>
+            </ul>
+          </div>
+          <div class="price-group">
+            <h3 class="font-serif">Additional effects</h3>
+            <ul>
+              <li><span>Wet Effect, Colourful</span></li>
+              <li><span>Bottom Lashes</span></li>
+              <li><span>Removal of eyelashes</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="book-now-wrap">
+          <button type="button" class="btn-primary" onclick="scrollToBook()">Book now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-about">
+      <div class="container-about">
+        <h2 class="section-title">About</h2>
+        <p class="about-subtitle">Luxury lash artistry in Strovolos, Nicosia.</p>
+        <p class="about-text">At Pretty Rich Lashes, we specialize in high-quality lash extensions designed to enhance your natural beauty with elegance and precision.</p>
+      </div>
+    </section>
+
+    <section class="section-book" id="book">
+      <div class="container-form">
+        <h2 class="section-title">Book appointment</h2>
+        <p class="section-subtitle">Select service, date, time, and your details.</p>
+
+        <div id="successBlock" class="card success-card" style="display:none;">
+          <div class="success-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="font-serif">Booking confirmed</h3>
+          <p class="confirm-msg" id="confirmMsg"></p>
+          <button type="button" class="btn-secondary" onclick="resetForm()">Book another</button>
+        </div>
+
+        <div id="formBlock" class="card">
+          <form id="bookingForm" onsubmit="return handleSubmit(event);">
+            <div class="form-group">
+              <label>Service</label>
+              <div class="service-grid" id="serviceGrid"></div>
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" class="input-field" required />
+            </div>
+            <div class="form-group">
+              <label>Time</label>
+              <div class="time-slots" id="timeSlots"></div>
+            </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="input-field" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" class="input-field" placeholder="+357 99 123 456" required />
+            </div>
+            <p id="formError" class="form-error" style="display:none;"></p>
+            <button type="submit" class="form-submit" id="submitBtn">Confirm booking</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-bar">
+    <div class="inner">
+      <div class="links">
+        <p class="brand">Pretty Rich Lashes</p>
+        <button type="button" class="book-link" onclick="scrollToBook()">Book</button>
+      </div>
+      <p class="copy">© <span id="year"></span> Pretty Rich Lashes</p>
+      <p class="built-by">Built by <a href="https://chrysos.dev" target="_blank" rel="noopener noreferrer">Chrysos.dev</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      var minDate = (function() {
+        var d = new Date();
+        d.setDate(d.getDate() + 1);
+        return d.toISOString().slice(0, 10);
+      })();
+      var maxDate = (function() {
+        var d = new Date();
+        d.setMonth(d.getMonth() + 2);
+        return d.toISOString().slice(0, 10);
+      })();
+      document.getElementById('date').min = minDate;
+      document.getElementById('date').max = maxDate;
+
+      var PRICE_LIST = [
+        { title: 'For lash extensions', items: [
+          { name: 'Classic & Hybrid', price: 40 },
+          { name: '2-3D Volume', price: 50 },
+          { name: '4D Volume', price: 60 },
+          { name: '5D Volume', price: 65 },
+          { name: 'Mega Volume', price: 70 }
+        ]},
+        { title: 'Refill / correction', items: [
+          { name: 'Classic & Hybrid', price: 30 },
+          { name: '2-3D Volume', price: 40 },
+          { name: '4D Volume', price: 50 },
+          { name: '5D Volume', price: 55 },
+          { name: 'Mega Volume', price: 60 }
+        ]},
+        { title: 'Additional effects', items: [
+          { name: 'Wet Effect, Colourful', price: 5 },
+          { name: 'Bottom Lashes', price: 15 },
+          { name: 'Removal of eyelashes', price: 10 }
+        ]}
+      ];
+
+      function getDurationHours() {
+        return 170 / 60;
+      }
+
+      var services = [];
+      PRICE_LIST.forEach(function(g) {
+        g.items.forEach(function(it) {
+          var name = it.name + ' · ' + g.title;
+          services.push({
+            id: g.title.toLowerCase().replace(/\s+/g, '-').replace(/[\/]/g, '') + '-' + it.name.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, ''),
+            name: name,
+            price: it.price,
+            durationHours: getDurationHours()
+          });
+        });
+      });
+
+      function padHour(h) { return h < 10 ? '0' + h : '' + h; }
+
+      function timeToMinutes(timeStr) {
+        var parts = timeStr.split(':');
+        return parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+      }
+
+      function minutesToTime(minutes) {
+        var h = Math.floor(minutes / 60);
+        var m = minutes % 60;
+        return padHour(h) + ':' + (m < 10 ? '0' : '') + m;
+      }
+
+      var BOOKED_SLOTS_KEY = 'pretty-rich-lashes-booked-slots';
+
+      function getBookedSlots() {
+        try {
+          var raw = localStorage.getItem(BOOKED_SLOTS_KEY);
+          var parsed = raw ? JSON.parse(raw) : [];
+          return Array.isArray(parsed) ? parsed : [];
+        } catch (err) {
+          return [];
+        }
+      }
+
+      function saveBookedSlots(slots) {
+        try {
+          localStorage.setItem(BOOKED_SLOTS_KEY, JSON.stringify(slots));
+        } catch (err) {}
+      }
+
+      function slotKey(dateStr, timeStr) {
+        return dateStr + '|' + timeStr;
+      }
+
+      function isSlotBooked(dateStr, timeStr) {
+        if (!dateStr || !timeStr) return false;
+        return getBookedSlots().indexOf(slotKey(dateStr, timeStr)) !== -1;
+      }
+
+      function markSlotBooked(dateStr, timeStr) {
+        if (!dateStr || !timeStr) return;
+        var key = slotKey(dateStr, timeStr);
+        var slots = getBookedSlots();
+        if (slots.indexOf(key) === -1) {
+          slots.push(key);
+          saveBookedSlots(slots);
+        }
+      }
+
+      function getSlotsForDate(dateStr, durationHours) {
+        if (!dateStr) return [];
+        var d = new Date(dateStr + 'T12:00:00');
+        var day = d.getDay();
+        if (day === 0) return null;
+        if (durationHours == null || durationHours <= 0) return [];
+        var durationMinutes = Math.round(durationHours * 60);
+        var startMin, endMin;
+        var slots = [];
+        if (day >= 1 && day <= 5) {
+          startMin = timeToMinutes('16:30');
+          endMin = timeToMinutes('20:00');
+          console.log('Working hours:', minutesToTime(startMin), '–', minutesToTime(endMin));
+          if (startMin + durationMinutes <= endMin) slots.push(minutesToTime(startMin));
+        } else if (day === 6) {
+          console.log('Working hours: fixed start times 08:00, 12:00, 16:30');
+          slots = ['08:00', '12:00', '16:30'];
+        } else {
+          return [];
+        }
+        console.log('Generated time slots:', slots);
+        return slots;
+      }
+
+      var timeWrap = document.getElementById('timeSlots');
+
+      function getSelectedServiceDuration() {
+        var sel = document.querySelector('.service-btn.selected');
+        if (!sel || !sel.dataset.duration) return null;
+        return parseFloat(sel.dataset.duration, 10);
+      }
+
+      function renderTimeSlots(dateStr, durationHours) {
+        timeWrap.innerHTML = '';
+        if (!dateStr) return;
+        if (durationHours == null || durationHours <= 0) {
+          var msg = document.createElement('p');
+          msg.className = 'time-sunday-msg';
+          msg.textContent = 'Select a service to see available times.';
+          timeWrap.appendChild(msg);
+          return;
+        }
+        console.log('Selected service duration:', durationHours, 'hours');
+        var slots = getSlotsForDate(dateStr, durationHours);
+        if (slots === null) {
+          var p = document.createElement('p');
+          p.className = 'time-sunday-msg';
+          p.textContent = 'Sunday appointments are available by request for selected clients. Please contact us directly via WhatsApp.';
+          timeWrap.appendChild(p);
+          return;
+        }
+        slots.forEach(function(t) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'time-btn';
+          btn.textContent = t;
+          if (isSlotBooked(dateStr, t)) {
+            btn.disabled = true;
+            btn.classList.add('booked');
+            btn.setAttribute('aria-label', t + ' unavailable');
+          }
+          btn.onclick = function() {
+            if (this.disabled) return;
+            document.querySelectorAll('.time-btn').forEach(function(b) { b.classList.remove('selected'); });
+            this.classList.add('selected');
+          };
+          timeWrap.appendChild(btn);
+        });
+      }
+
+      function updateTimeSlots() {
+        var dateEl = document.getElementById('date');
+        var duration = getSelectedServiceDuration();
+        renderTimeSlots(dateEl.value, duration);
+      }
+
+      document.getElementById('date').addEventListener('change', function() {
+        document.querySelectorAll('.time-btn').forEach(function(b) { b.classList.remove('selected'); });
+        updateTimeSlots();
+      });
+
+      var grid = document.getElementById('serviceGrid');
+      services.forEach(function(s) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'service-btn';
+        btn.dataset.id = s.id;
+        btn.dataset.name = s.name;
+        btn.dataset.duration = String(s.durationHours);
+        btn.innerHTML = '<span class="name">' + escapeHtml(s.name) + '</span>';
+        btn.onclick = function() {
+          document.querySelectorAll('.service-btn').forEach(function(b) { b.classList.remove('selected'); });
+          this.classList.add('selected');
+          document.querySelectorAll('.time-btn').forEach(function(b) { b.classList.remove('selected'); });
+          updateTimeSlots();
+        };
+        grid.appendChild(btn);
+      });
+
+      function escapeHtml(s) {
+        var div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      window.scrollToBook = function() {
+        document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+
+      function toggleNav() {
+        document.getElementById('navToggle').classList.toggle('open');
+        document.getElementById('navDropdown').classList.toggle('open');
+      }
+
+      function closeNav() {
+        document.getElementById('navToggle').classList.remove('open');
+        document.getElementById('navDropdown').classList.remove('open');
+      }
+
+      function formatDate(iso) {
+        var d = new Date(iso + 'T12:00:00');
+        return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      }
+
+      var WHATSAPP_NUMBER = '35799777800';
+
+      window.handleSubmit = function(e) {
+        e.preventDefault();
+        var sel = document.querySelector('.service-btn.selected');
+        var timeBtn = document.querySelector('.time-btn.selected');
+        var dateEl = document.getElementById('date');
+        var nameEl = document.getElementById('name');
+        var errEl = document.getElementById('formError');
+        var submitBtn = document.getElementById('submitBtn');
+
+        if (!sel || !dateEl.value) {
+          errEl.textContent = 'Please select a service and date.';
+          errEl.style.display = 'block';
+          return false;
+        }
+        var duration = getSelectedServiceDuration();
+        var slots = getSlotsForDate(dateEl.value, duration);
+        if (slots === null) {
+          errEl.textContent = 'Sunday appointments are available by request for selected clients. Please contact us directly via WhatsApp.';
+          errEl.style.display = 'block';
+          return false;
+        }
+        if (!timeBtn) {
+          errEl.textContent = 'Please select a service, date, and time.';
+          errEl.style.display = 'block';
+          return false;
+        }
+        var name = nameEl.value.trim();
+        if (!name) {
+          errEl.textContent = 'Please enter your name.';
+          errEl.style.display = 'block';
+          return false;
+        }
+
+        errEl.style.display = 'none';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Booking…';
+
+        var serviceName = sel.dataset.name;
+        var date = dateEl.value;
+        var time = timeBtn.textContent;
+        if (isSlotBooked(date, time)) {
+          errEl.textContent = 'This time slot was just booked. Please choose another time.';
+          errEl.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Confirm booking';
+          updateTimeSlots();
+          return false;
+        }
+        markSlotBooked(date, time);
+        var message = 'Hello, I would like to confirm my appointment:\nName: ' + name + '\nService: ' + serviceName + '\nDate: ' + formatDate(date) + '\nTime: ' + time;
+        var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+        window.location.href = url;
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Confirm booking';
+        return false;
+      };
+
+      window.resetForm = function() {
+        document.querySelectorAll('.service-btn').forEach(function(b) { b.classList.remove('selected'); });
+        document.getElementById('date').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('formError').style.display = 'none';
+        document.getElementById('successBlock').style.display = 'none';
+        document.getElementById('formBlock').style.display = 'block';
+        renderTimeSlots('', null);
+      };
+
+      var logoWrap = document.querySelector('.hero .logo-wrap');
+      if (logoWrap && logoWrap.querySelector('.logo-fallback')) {
+        var img = logoWrap.querySelector('img');
+        var fallback = logoWrap.querySelector('.logo-fallback');
+        if (img && img.complete && !img.naturalWidth) {
+          img.style.display = 'none';
+          fallback.style.display = 'flex';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
+Selector('.logo-fallback')) {
+        var img = logoWrap.querySelector('img');
+        var fallback = logoWrap.querySelector('.logo-fallback');
+        if (img && img.complete && !img.naturalWidth) {
+          img.style.display = 'none';
+          fallback.style.display = 'flex';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
